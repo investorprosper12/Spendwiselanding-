@@ -1,7 +1,7 @@
 import './styles.css';
 import './theme.css';
 
-const APP_URL = 'https://my-expense-tracker-tpnloe.v2.appdeploy.ai/';
+const APP_URL = 'https://spendwise-app-flax.vercel.app/';
 
 /* Pass an explicit light/dark choice to the app so the look carries over */
 function syncAppLinks(): void {
