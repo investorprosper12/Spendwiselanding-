@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpendWise: Simple, secure expense tracking</title>
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
+    <meta
+      name="description"
+      content="Track income and expenses, set budgets and understand your spending with SpendWise. Free to start."
+    />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta
+      property="og:title"
+      content="SpendWise: Simple, secure expense tracking"
+    />
+    <meta
+      property="og:description"
+      content="Know where every naira goes. Track expenses, set budgets and see your progress."
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a class="skip" href="#main">Skip to main content</a>
+      <header class="site-header">
+        <div class="wrap bar">
+          <a class="logo" href="#top" aria-label="SpendWise home"
+            ><span class="logo-mark" aria-hidden="true">S</span>SpendWise</a
+          >
+          <nav id="menu" class="nav" aria-label="Main">
+            <a href="#features">Features</a>
+            <a href="#how">How it works</a>
+            <a href="#testimonials">Testimonials</a>
+            <div class="nav-cta">
+          <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle light and dark mode">
+            <svg class="ic icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/></svg>
+            <svg class="ic icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+          </button>
+              <a
+                class="btn btn-text"
+                href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+                >Log in</a
+              >
+              <a
+                class="btn btn-primary"
+                href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+                >Get started free</a
+              >
+            </div>
+          </nav>
+          <button
+            id="menu-toggle"
+            class="menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu"
+            aria-label="Toggle menu"
+          >
+            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="hero" id="top">
+          <div class="wrap hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">Personal finance, simplified</p>
+              <h1>Know where every naira goes.</h1>
+              <p class="lead">
+                SpendWise helps you track income and expenses, set budgets and
+                see your progress, all in one calm, secure place.
+              </p>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary btn-lg"
+                  href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+                  >Start free</a
+                >
+                <a class="btn btn-outline btn-lg" href="#how"
+                  >See how it works</a
+                >
+              </div>
+              <ul class="trust">
+                <li>Free to start</li>
+                <li>No card required</li>
+                <li>Export your data anytime</li>
+              </ul>
+            </div>
+            <div
+              class="preview"
+              role="img"
+              aria-label="Preview of the SpendWise dashboard showing a balance, a spending chart and a budget alert. Sample data."
+            >
+              <div class="glass panel">
+                <div class="p-head">
+                  <span>Total balance</span><span class="tag">Sample data</span>
+                </div>
+                <p class="p-big">₦1,284,500</p>
+                <div class="p-row">
+                  <div><small>Income</small><b class="up">₦450,000</b></div>
+                  <div><small>Expenses</small><b>₦186,300</b></div>
+                  <div><small>Savings</small><b class="up">₦263,700</b></div>
+                </div>
+                <div class="bars">
+                  <span style="height: 38%"></span
+                  ><span style="height: 62%"></span
+                  ><span style="height: 46%"></span
+                  ><span style="height: 78%"></span
+                  ><span style="height: 54%"></span
+                  ><span style="height: 88%"></span
+                  ><span style="height: 66%"></span>
+                </div>
+              </div>
+              <div class="glass chip chip-a">
+                <small>Food budget</small>
+                <div class="meter"><span style="width: 82%"></span></div>
+                <b>82% used</b>
+              </div>
+              <div class="glass chip chip-b">
+                <small>Top category</small><b>Housing · 38%</b>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="features">
+          <div class="wrap">
+            <div class="head">
+              <p class="eyebrow">Features</p>
+              <h2>Everything you need, nothing you don't</h2>
+              <p class="sub">
+                A focused set of tools to help you understand your money and
+                stay in control.
+              </p>
+            </div>
+            <div class="cards">
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M3 7h16a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                    />
+                    <path d="M3 7l12-3v3M17 14h.01" /></svg
+                ></span>
+                <h3>Track income and expenses</h3>
+                <p>
+                  Log every transaction in seconds with a description, amount,
+                  category, date and optional note.
+                </p>
+              </article>
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <circle cx="12" cy="12" r="4" /></svg
+                ></span>
+                <h3>Budgets with early warnings</h3>
+                <p>
+                  Set a monthly budget overall or per category and get a clear
+                  warning before you overspend.
+                </p>
+              </article>
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg
+                ></span>
+                <h3>Clear financial reports</h3>
+                <p>
+                  See weekly, monthly and yearly charts for income, spending and
+                  savings trends.
+                </p>
+              </article>
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 12V4h8l10 10-8 8z" />
+                    <circle cx="7.5" cy="8.5" r="1" /></svg
+                ></span>
+                <h3>Categories your way</h3>
+                <p>
+                  Start with sensible defaults, then add, rename and recolour
+                  categories to match your life.
+                </p>
+              </article>
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z" /></svg
+                ></span>
+                <h3>Works on every screen</h3>
+                <p>
+                  A responsive design for phones, tablets and desktops, with
+                  light and dark modes.
+                </p>
+              </article>
+              <article class="card">
+                <span class="icon-bubble"
+                  ><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+                    <path d="M9 12l2 2 4-4" /></svg
+                ></span>
+                <h3>Your data stays yours</h3>
+                <p>
+                  Accounts use email confirmation, each user only sees their own
+                  data, and you can export or back it up anytime.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section tint" id="how">
+          <div class="wrap">
+            <div class="head">
+              <p class="eyebrow">How it works</p>
+              <h2>Up and running in three steps</h2>
+            </div>
+            <ol class="steps">
+              <li>
+                <span class="num" aria-hidden="true">1</span>
+                <h3>Create your free account</h3>
+                <p>
+                  Sign up with your email and confirm it. It takes about a
+                  minute.
+                </p>
+              </li>
+              <li>
+                <span class="num" aria-hidden="true">2</span>
+                <h3>Add your transactions</h3>
+                <p>
+                  Record income and expenses as they happen, and sort them into
+                  categories.
+                </p>
+              </li>
+              <li>
+                <span class="num" aria-hidden="true">3</span>
+                <h3>See the full picture</h3>
+                <p>
+                  Watch your budgets, charts and savings update so you can make
+                  better decisions.
+                </p>
+              </li>
+            </ol>
+            <p class="center">
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+                >Create free account</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="testimonials">
+          <div class="wrap">
+            <div class="head">
+              <p class="eyebrow">Testimonials</p>
+              <h2>What people value in SpendWise</h2>
+              <p class="sub">
+                Illustrative examples of the experience we are building towards.
+                Real user feedback will appear here as it comes in.
+              </p>
+            </div>
+            <div class="cards">
+              <figure class="card quote">
+                <blockquote>
+                  “I finally see where my money goes each month. The budget
+                  warnings stop me before I overspend.”
+                </blockquote>
+                <figcaption>
+                  <span class="avatar" aria-hidden="true">A</span
+                  ><span
+                    >Illustrative example<br /><small
+                      >Monthly budgeting</small
+                    ></span
+                  >
+                </figcaption>
+              </figure>
+              <figure class="card quote">
+                <blockquote>
+                  “Adding a transaction takes seconds, and the reports are easy
+                  to read on my phone.”
+                </blockquote>
+                <figcaption>
+                  <span class="avatar" aria-hidden="true">B</span
+                  ><span
+                    >Illustrative example<br /><small
+                      >Everyday tracking</small
+                    ></span
+                  >
+                </figcaption>
+              </figure>
+              <figure class="card quote">
+                <blockquote>
+                  “Knowing I can export my data whenever I want makes it easy to
+                  trust.”
+                </blockquote>
+                <figcaption>
+                  <span class="avatar" aria-hidden="true">C</span
+                  ><span
+                    >Illustrative example<br /><small>Data control</small></span
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-band">
+          <div class="wrap center">
+            <h2>Take control of your money today</h2>
+            <p>
+              Create your free account and add your first transaction in under
+              two minutes.
+            </p>
+            <a
+              class="btn btn-mint btn-lg"
+              href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+              >Get started free</a
+            >
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap foot-grid">
+          <div>
+            <a class="logo logo-light" href="#top"
+              ><span class="logo-mark" aria-hidden="true">S</span>SpendWise</a
+            >
+            <p class="foot-note">
+              Simple, secure expense tracking for everyday life.
+            </p>
+          </div>
+          <nav aria-label="Product">
+            <h3>Product</h3>
+            <a href="#features">Features</a><a href="#how">How it works</a>
+          </nav>
+          <nav aria-label="Account">
+            <h3>Account</h3>
+            <a href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+              >Log in</a
+            ><a href="https://my-expense-tracker-tpnloe.v2.appdeploy.ai/"
+              >Create account</a
+            >
+          </nav>
+        </div>
+        <div class="wrap foot-bottom">
+          <p>© <span id="year">2026</span> SpendWise. All rights reserved. &middot; <a href="/privacy.html" style="text-decoration:underline">Privacy Policy</a> &middot; <a href="/terms.html" style="text-decoration:underline">Terms of Service</a></p>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
