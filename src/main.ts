@@ -3,6 +3,26 @@ import './theme.css';
 
 const APP_URL = 'https://spendwise-app-flax.vercel.app/';
 
+/* Brand: favicon and the two-tone SpendWise wordmark */
+const favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.type = 'image/svg+xml';
+favicon.href = '/favicon.svg';
+document.head.appendChild(favicon);
+
+document.querySelectorAll('.logo').forEach(logo => {
+  Array.from(logo.childNodes).forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() === 'SpendWise') {
+      const wise = document.createElement('span');
+      wise.className = 'wm-wise';
+      wise.textContent = 'Wise';
+      const fragment = document.createDocumentFragment();
+      fragment.append('Spend', wise);
+      node.replaceWith(fragment);
+    }
+  });
+});
+
 /* Pass an explicit light/dark choice to the app so the look carries over */
 function syncAppLinks(): void {
   let saved: string | null = null;

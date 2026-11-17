@@ -52,12 +52,22 @@ h1, h2, h3 { color: var(--t-text); font-weight: 800; letter-spacing: -0.025em; }
   background: var(--t-glass); border-bottom: 1px solid var(--t-glass-b);
   -webkit-backdrop-filter: blur(22px) saturate(1.5); backdrop-filter: blur(22px) saturate(1.5);
 }
-.logo { color: var(--t-text); }
+.logo { color: var(--t-text); font-weight: 600; letter-spacing: -0.03em; }
 .logo-light { color: #fff; }
 .logo-mark {
-  background: linear-gradient(135deg, var(--t-brand), var(--t-brand2));
-  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.35);
+  background: url('/logo-mark.svg') center / cover no-repeat;
+  color: transparent;
+  font-size: 0;
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
 }
+.wm-wise {
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme='dark'] .wm-wise, .logo-light .wm-wise { background-image: linear-gradient(90deg, #8b8bff, #22d3ee); }
 .nav > a { color: var(--t-text); border-radius: 14px; }
 .nav > a:hover { background: var(--t-tonal); }
 .menu-btn, .icon-btn {
