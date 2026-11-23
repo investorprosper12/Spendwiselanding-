@@ -60,14 +60,19 @@ h1, h2, h3 { color: var(--t-text); font-weight: 800; letter-spacing: -0.025em; }
   font-size: 0;
   box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
 }
+/* Switches on automatically once /logo-mark.png (the final artwork) is uploaded */
+html.brand-new .logo-mark {
+  background-image: url('/logo-mark.png');
+  box-shadow: 0 6px 16px rgba(60, 40, 200, 0.35);
+}
 .wm-wise {
   font-weight: 800;
-  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  background: linear-gradient(90deg, #a66bff, #2f8cff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-[data-theme='dark'] .wm-wise, .logo-light .wm-wise { background-image: linear-gradient(90deg, #8b8bff, #22d3ee); }
+[data-theme='dark'] .wm-wise, .logo-light .wm-wise { background-image: linear-gradient(90deg, #b88aff, #4aa0ff); }
 .nav > a { color: var(--t-text); border-radius: 14px; }
 .nav > a:hover { background: var(--t-tonal); }
 .menu-btn, .icon-btn {

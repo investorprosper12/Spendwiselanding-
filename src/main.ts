@@ -3,13 +3,24 @@ import './theme.css';
 
 const APP_URL = 'https://spendwise-app-flax.vercel.app/';
 
-/* Brand: favicon and the two-tone SpendWise wordmark */
+/* Brand: use the final artwork as soon as its files exist in /public */
+function probe(url: string, onLoad: () => void): void {
+  const img = new Image();
+  img.onload = onLoad;
+  img.src = url;
+}
+probe('/logo-mark.png', () => document.documentElement.classList.add('brand-new'));
 const favicon = document.createElement('link');
 favicon.rel = 'icon';
 favicon.type = 'image/svg+xml';
 favicon.href = '/favicon.svg';
 document.head.appendChild(favicon);
+probe('/favicon.png', () => {
+  favicon.type = 'image/png';
+  favicon.href = '/favicon.png';
+});
 
+/* Brand: the two-tone SpendWise wordmark */
 document.querySelectorAll('.logo').forEach(logo => {
   Array.from(logo.childNodes).forEach(node => {
     if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim() === 'SpendWise') {
