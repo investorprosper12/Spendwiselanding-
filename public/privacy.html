@@ -7,7 +7,7 @@
 <meta name="description" content="How SpendWise collects, uses and protects your personal data.">
 <meta name="theme-color" content="#4f46e5">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script>try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)}catch(e){}var m=new Image();m.onload=function(){document.documentElement.className+=' brand-new'};m.src='/logo-mark.png';var f=new Image();f.onload=function(){var l=document.querySelector('link[rel=icon]');l.type='image/png';l.href='/favicon.png'};f.src='/favicon.png';</script>
 <style>
 :root{--navy:#0b1f3a;--emerald:#047857;--mint:#e6f6ef;--bg:#f7faf9;--muted:#4a5b73;--line:rgba(11,31,58,.12)}
 *{box-sizing:border-box}
@@ -40,6 +40,7 @@ h1,h2{font-weight:800;letter-spacing:-.025em}
 header{background:var(--card);border-bottom:1px solid var(--line)}
 p,li{color:var(--tx)}
 .mark{background:url(/logo-mark.svg) center/cover no-repeat;color:transparent;font-size:0;box-shadow:0 6px 14px rgba(79,70,229,.3)}
+html.brand-new .mark{background-image:url(/logo-mark.png);box-shadow:0 6px 16px rgba(60,40,200,.35)}
 .skip{background:#4f46e5;color:#fff}
 :focus-visible{outline-color:#4f46e5}
 mark{background:#fde68a;color:#0b1226}
